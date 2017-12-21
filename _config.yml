@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
 title: Loreto.py Manager
 description: A faster, friendlier Loreto service
+show_downloads: true
