@@ -7,6 +7,7 @@ from file_io import *
 from getpass import getpass
 
 folder = curDir+'modules/'
+
 modules = os.listdir(folder)
 
 for module in modules:

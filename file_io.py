@@ -59,7 +59,7 @@ def dnld(inp):
     pth    = pth.replace('\\','/')
     ext    = pth.split('/')[-1]
     fle    = session.get(pth)
-    open('downloads/'+ext,'wb').write(fle.content)
+    open(curDir+'downloads/'+ext,'wb').write(fle.content)
     return fle
 
 def upld(inp):
@@ -75,5 +75,3 @@ def uhex(inp,name):
     image = open(curDir+'downloads/'+name, 'wb')
     unhex = base64.decodestring(inp.encode())
     image.write(unhex)
-
-dnld('File1.png')
