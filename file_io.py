@@ -32,20 +32,9 @@ unf  = (content[0],
 
 url     = 'https://e.loreto.ac.uk/extranet-7.9/login.aspx'
 
-payload = {        
-        '__EVENTTARGET'        : '',
-        '__EVENTARGUMENT'      : '',
-        '__VIEWSTATE'          : '/wEPDwUKMTUzNTQ2OTI1MGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0'
-                                 'tleV9fFgIFF2N0bDAwJGN0bDExJGN0bDAyJGN0bDAxBRdjdGwwMCRjdGwxMSRj'
-                                 'dGwwMiRjdGwwMwULY3RsMDAkY3RsMTEPD2QCAWT8EXCzGFuyaHwRYT5DXADxxU'
-                                 'CPDQY4bj58XYS62KSofQ==',
-        '__VIEWSTATEGENERATOR' : '48197344',
-        '__EVENTVALIDATION'    : '/wEdAAVzvApKNFN0NDtRL1hGfbzzevVvFwfHkeeY3hsFyLZVyO1NsodTRZU5H1'
-                                 'OyI03zVPbXq2eayQar80MYq419oMqi9ms/j/llou8iY+ln/nknFGlICPYct20M'
-                                 'DymF9HKEnlos58geJ0MObAQR00zs+8UC',
+payload = {
         'ctl00$body$username'  : unf[0],
-        'ctl00$body$password'  : unf[1],
-        'ctl00$body$login'     : 'Login'}
+        'ctl00$body$password'  : unf[1]}
 
 session = requests.Session()
 sauce   = session.post(url, data=payload)
