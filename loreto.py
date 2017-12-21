@@ -6,7 +6,7 @@ import sys
 from file_io import *
 from getpass import getpass
 
-folder = 'modules/'
+folder = curDir+'modules/'
 modules = os.listdir(folder)
 
 for module in modules:
@@ -16,12 +16,7 @@ import requests
 
 usr_info = []
 
-if not os.path.exists('loreto_data/auth'):
-    with open('loreto_data/auth','w+') as fh:
-        fh.write(input('Username: ')+'\n')
-        fh.write(input('Password: '))
-
-with open('loreto_data/auth','r') as fh:
+with open(curDir+'loreto_data/auth','r') as fh:
     content = fh.read().strip()
     
 content = content.split('\n')
@@ -29,10 +24,8 @@ content = content.split('\n')
 key = (content[0],
        content[1])
 
-usr_info.append([key[0],key[1]])
-
 def dump(sep):
-    with open('loreto_data/dump','w+') as file:
+    with open(curDir+'loreto_data/dump','w+') as file:
         for line in usr_info:
             file.write(sep.join(line)+'\n')
             
@@ -65,5 +58,7 @@ for header in headers:
 raw_table = raw_table.split('\t')
 raw_table = [item.strip(' ') for item in raw_table if item][1:-1]
 raw_table = [item for item in raw_table if not '=' in item]
+
+usr_info.append(raw_table)
 
 dump('|')
