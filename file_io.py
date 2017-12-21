@@ -34,7 +34,21 @@ url     = 'https://e.loreto.ac.uk/extranet-7.9/login.aspx'
 
 payload = {
         'ctl00$body$username'  : unf[0],
-        'ctl00$body$password'  : unf[1]}
+        'ctl00$body$password'  : unf[1],
+        
+        '__EVENTVALIDATION'    : '/wEdAAQmeso2J1PoHxrQ49Q'
+                                 'XdzmH7U2yh1NFlTkfU7IjTf'
+                                 'NU9terZ5rJBqvzQxirjX2gy'
+                                 'qL2az+P+WWi7yJj6Wf+eScU'
+                                 'dz+RQsgUIMoHq9ekJPcfNcX'
+                                 'Z5iV4N9A3nPHPjkFi6Ao=',
+        
+        '__VIEWSTATE'          : '/wEPDwUKMTUzNTQ2OTI1MGR'
+                                 'kBWYBsd8F5NALKOmLqiDX2X'
+                                 '1Y/71HzWfqYLeawg4MvMs=',
+        
+        'ctl00$body$login'     : 'Login',       
+        }
 
 session = requests.Session()
 sauce   = session.post(url, data=payload)
@@ -61,3 +75,5 @@ def uhex(inp,name):
     image = open(curDir+'downloads/'+name, 'wb')
     unhex = base64.decodestring(inp.encode())
     image.write(unhex)
+
+dnld('File1.png')
