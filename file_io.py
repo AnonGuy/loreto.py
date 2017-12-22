@@ -6,16 +6,20 @@ from getpass import getpass
 
 try:
     curDir = sys.argv[1]
+    usName = sys.argv[2]
+    usPswd = sys.argv[3]
 except:
     curDir = os.getcwd()+'/'
+    usName = input("Enter username: ")
+    usPswd = getpass("Enter password: ")
 
 folder = curDir+'/modules/'
 modules = os.listdir(folder)
 
 if not os.path.exists(curDir+'/loreto_data/auth'):
     with open(curDir+'/loreto_data/auth','w+') as fh:
-        fh.write(input('Username: ')+'\n')
-        fh.write(getpass('Password: '))
+        fh.write(usName+'\n')
+        fh.write(usPswd)
 
 for module in modules:
     sys.path.append(folder+module)
