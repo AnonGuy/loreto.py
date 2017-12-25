@@ -22,3 +22,4 @@ C:\Users\jerem\Desktop\Loreto.py\visual_basic\loreto_gui\loreto_gui\obj\Debug\lo
 C:\Users\jerem\Desktop\Loreto.py\visual_basic\loreto_gui\loreto_gui\obj\Debug\loreto_gui.xml
 C:\Users\jerem\Desktop\Loreto.py\visual_basic\loreto_gui\loreto_gui\obj\Debug\loreto_gui.pdb
 C:\Users\jerem\Desktop\Loreto.py\visual_basic\loreto_gui\loreto_gui\obj\Debug\loreto_gui.vbprojResolveAssemblyReference.cache
+C:\Users\jerem\Desktop\Loreto.py\visual_basic\loreto_gui\loreto_gui\obj\Debug\loreto_gui.Manager.resources
