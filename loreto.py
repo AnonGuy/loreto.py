@@ -6,7 +6,7 @@ import sys
 from file_io import *
 from getpass import getpass
 
-folder = curDir+'modules/'
+folder = curDir+'/modules/'
 
 modules = os.listdir(folder)
 
@@ -17,7 +17,7 @@ import requests
 
 usr_info = []
 
-with open(curDir+'loreto_data/auth','r') as fh:
+with open(curDir+'/loreto_data/auth','r') as fh:
     content = fh.read().strip()
     
 content = content.split('\n')
@@ -26,7 +26,7 @@ key = (content[0],
        content[1])
 
 def dump(sep):
-    with open(curDir+'loreto_data/dump','w+') as file:
+    with open(curDir+'/loreto_data/dump','w+') as file:
         for line in usr_info:
             file.write(sep.join(line)+'\n')
             

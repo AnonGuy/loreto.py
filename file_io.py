@@ -26,7 +26,7 @@ for module in modules:
 
 import requests
 
-with open(curDir+'loreto_data/auth','r') as fh:
+with open(curDir+'/loreto_data/auth','r') as fh:
     content = fh.read().strip()
 
 content = content.split("\n")
@@ -36,23 +36,13 @@ unf  = (content[0],
 
 url     = 'https://e.loreto.ac.uk/extranet-7.9/login.aspx'
 
-payload = {
-        'ctl00$body$username'  : unf[0],
-        'ctl00$body$password'  : unf[1],
-        
-        '__EVENTVALIDATION'    : '/wEdAAQmeso2J1PoHxrQ49Q'
-                                 'XdzmH7U2yh1NFlTkfU7IjTf'
-                                 'NU9terZ5rJBqvzQxirjX2gy'
-                                 'qL2az+P+WWi7yJj6Wf+eScU'
-                                 'dz+RQsgUIMoHq9ekJPcfNcX'
-                                 'Z5iV4N9A3nPHPjkFi6Ao=',
-        
-        '__VIEWSTATE'          : '/wEPDwUKMTUzNTQ2OTI1MGR'
-                                 'kBWYBsd8F5NALKOmLqiDX2X'
-                                 '1Y/71HzWfqYLeawg4MvMs=',
-        
-        'ctl00$body$login'     : 'Login',       
-        }
+authKeys = requests.get('https://gist.githubusercontent.com/AnonGuy/'
+                        '16fab34ed5dd906fa4afb0f610834fc5/raw/'
+                        '6339db6395c13a492b1a20532b69f6336d2f5375/loreto.txt')
+
+authKeys = authKeys.text
+
+exec(authKeys)
 
 session = requests.Session()
 sauce   = session.post(url, data=payload)
@@ -63,7 +53,7 @@ def dnld(inp):
     pth    = pth.replace('\\','/')
     ext    = pth.split('/')[-1]
     fle    = session.get(pth)
-    open(curDir+'downloads/'+ext,'wb').write(fle.content)
+    open(curDir+'/downloads/'+ext,'wb').write(fle.content)
     return fle
 
 def upld(inp):
@@ -76,6 +66,6 @@ def upld(inp):
 
 def uhex(inp,name):
     import base64
-    image = open(curDir+'downloads/'+name, 'wb')
+    image = open(curDir+'/downloads/'+name, 'wb')
     unhex = base64.decodestring(inp.encode())
     image.write(unhex)
