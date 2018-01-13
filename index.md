@@ -1,4 +1,4 @@
-# Warning - Loreto.py is deprecated
+# Warning - Loreto.py is deprecated!
 Please see [LoretoBot](https://anonguy.github.io/loretobot) for latest Loreto development.
 # Loreto.py
 A Pythonic management system for the loreto subdomains, built by [Jeremiah Boby](https://anonguy.github.io).
